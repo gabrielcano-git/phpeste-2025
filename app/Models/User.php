@@ -64,13 +64,13 @@ class UsersTable extends Table
     {
         $validator
             ->integer('id')
-            ->allowEmptyString('id', null, 'create');
+            ->allowEmptyString('id', null, 'create')
 
         $validator
             ->email('email')
             ->requirePresence('email', 'create')
             ->notEmptyString('email')
-            ->add('email', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
+            ->add('email', 'unique', ['rule' => 'validateUnique', 'provider' => 'table'])
 
         $validator
             ->scalar('username')
